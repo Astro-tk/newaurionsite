@@ -1,0 +1,560 @@
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurion.</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.svg" />
+  <link rel="stylesheet" href="../assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="../assets/libs/aos-master/dist/aos.css">
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
+    <div class="container">
+      <div class="header-wrapper d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <a href="index.html" class="logo-white">
+            <img src="../assets/images/logos/logo-white.svg" alt="logo" class="img-fluid">
+          </a>
+          <a href="index.html" class="logo-dark">
+            <img src="../assets/images/logos/logo-dark.svg" alt="logo" class="img-fluid">
+          </a>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+
+          <div class="btn-group">
+            <button
+              class="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle"
+              type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+              <iconify-icon icon="solar:hamburger-menu-line-duotone" class="menu-icon fs-8 text-dark"></iconify-icon>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end p-4">
+              <div class="d-flex flex-column gap-6">
+                <div class="hstack justify-content-between border-bottom pb-6">
+                  <p class="mb-0 fs-5 text-dark">Menu</p>
+                  <button type="button" class="btn-close opacity-75" aria-label="Close"></button>
+                </div>
+                <div class="d-flex flex-column gap-3">
+                  <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
+                    <li class="header-item">
+                      <a href="index.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Home</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="about-us.html" aria-current="true"
+                        class="header-link active hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">About</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="projects.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Projects</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="index.html#quote" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Get a Quote</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="index.html#services" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Services</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="contact.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <a class="text-dark" href="tel:+27-67-286-2136">+27-67-286-2136</a>
+                  <a class="fs-8 text-dark fw-bold" href="mailto:info@aurioncreative.com">info@aurioncreative.com</a>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--  Page Wrapper -->
+  <div class="page-wrapper overflow-hidden">
+
+    <!--  Banner Section -->
+    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
+      style="background-image: url(../assets/images/backgrounds/aboutus-banner.jpg);">
+      <div class="container">
+        <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+          <div class="row align-items-center">
+            <div class="col-xl-4">
+              <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
+                data-aos-duration="1000">
+                <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
+                <p class="mb-0 text-white fs-5 text-opacity-70">We craft <span class="text-primary">innovative
+                    digital</span> designs that amplify brand identity and drive meaningful results</p>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex align-items-end gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <h1 class="mb-0 fs-16 text-white lh-1">About us</h1>
+            <a href="javascript:void(0)" class="p-1 ps-7 bg-primary rounded-pill">
+              <span class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center">
+                <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  About Content Section -->
+    <section class="about-content py-5 py-lg-11 py-xl-12">
+      <div class="container">
+        <div class="d-flex flex-column gap-5 gap-xl-11 gap-xxl-12">
+          <div class="row gap-4 gap-lg-0">
+            <div class="col-lg-4">
+              <h2 class="fs-13 mb-0" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">Aurion.</h2>
+            </div>
+            <div class="col-lg-8">
+              <div class="d-flex flex-column gap-4 gap-lg-5" data-aos="fade-up" data-aos-delay="200"
+                data-aos-duration="1000">
+                <p class="mb-0 fs-5 text-dark">
+                  We are a modern digital solutions studio built for founders, startups, and businesses that want to grow fast and stand out with intention.
+                  Aurion is where creativity meets engineering — a space where ideas become functional, beautiful, and impactful digital experiences.<br>
+                  <br>
+                  Your vision becomes our blueprint. Whether it’s a website, a custom software tool, or an intelligent AI-powered system, we help you turn bold concepts into real solutions that transform how you work, communicate, and scale.
+                  The digital world is evolving quickly, and Aurion ensures your brand evolves with it.
+                </p>
+                <p class="mb-0 fs-5 text-dark">
+                  At Aurion, we bring ideas to life through services including: web design, custom software development, AI solutions, branding, content creation, and seamless digital integration. Every project blends creativity with technology — designing experiences that are engaging, intuitive, and purpose-driven.
+                  With each build, we push boundaries, refine experiences, and craft solutions that move businesses forward.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row gx-xl-5">
+            <div class="col-md-6 col-lg-4 mb-8 mb-lg-0">
+              <div class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <h2 class="mb-0 fs-13 pb-7 border-bottom"><span class="count" data-target="45">20</span>+</h2>
+                <div class="d-flex flex-column gap-3">
+                  <h4 class="mb-0">Brands Empowered</h4>
+                  <p class="mb-0">Helping businesses and creators strengthen their identity and digital presence.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-8 mb-lg-0">
+              <div class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <h2 class="mb-0 fs-13 pb-7 border-bottom"><span class="count" data-target="15">15</span>M</h2>
+                <div class="d-flex flex-column gap-3">
+                  <h4 class="mb-0">User reach across platforms</h4>
+                  <p class="mb-0">Driving impact through optimized digital products and AI-powered tools.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-8 mb-lg-0">
+              <div class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                <h2 class="mb-0 fs-13 pb-7 border-bottom"><span class="count" data-target="158">158</span>+</h2>
+                <div class="d-flex flex-column gap-3">
+                  <h4 class="mb-0">Successful digital projects</h4>
+                  <p class="mb-0">Building trusted relationships through quality, innovation, and results.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  About Img Section -->
+    <section class="about-img">
+      <img src="../assets/images/about/about-img.jpg" alt="" class="w-100 object-fit-cover">
+      <div class="marquee w-100 d-flex align-items-center overflow-hidden bg-primary py-4">
+        <div class="marquee-content d-flex align-items-center gap-8">
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Branding</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Web development</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Custom Software</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Content creation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Solutions</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Graphic Design</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Automation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Branding</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Web development</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Custom Software</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Content creation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Solutions</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Graphic Design</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Automation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Branding</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Web development</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Custom Software</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Content creation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Solutions</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Graphic Design</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Automation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Branding</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Web development</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Custom Software</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Content creation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Solutions</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Graphic Design</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Automation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Branding</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Web development</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Custom Software</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Content creation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Solutions</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Graphic Design</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Automation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Branding</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Web development</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Custom Software</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Content creation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Solutions</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Graphic Design</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Automation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Branding</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Web development</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Custom Software</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Content creation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Solutions</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Graphic Design</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Automation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Branding</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Web development</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Custom Software</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Content creation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Solutions</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">Graphic Design</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+          <div class="hstack gap-4 flex-shrink-0">
+            <h4 class="mb-0">AI Automation</h4>
+            <span class="round-10 bg-dark bg-opacity-10 rounded-circle flex-shrink-0"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!--  About Us Enhanced Section -->
+<section class="py-5 py-lg-11 py-xl-12">
+  <div class="container">
+    <div class="d-flex flex-column gap-5 gap-xl-11">
+
+      <!-- Section Header -->
+      <div class="row gap-7 gap-xl-0">
+        <div class="col-xl-4 col-xxl-4">
+          <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
+            data-aos-duration="1000">
+            <span
+              class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">06</span>
+            <hr class="border-line bg-white">
+            <span class="badge text-bg-dark">About Aurion</span>
+          </div>
+        </div>
+
+        <div class="col-xl-8 col-xxl-7">
+          <div class="row">
+            <div class="col-xxl-10">
+              <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
+                data-aos-duration="1000">
+                <h2 class="mb-0">Shaping digital experiences that elevate brands</h2>
+                <p class="fs-5 mb-0 text-opacity-70">
+                  At Aurion, our focus is simple — craft digital solutions that look exceptional, function flawlessly,
+                  and help businesses grow. We combine creativity, engineering, and modern AI to build products
+                  that feel intuitive, thoughtful, and future-ready.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Mission / Vision / Values Cards (Light Theme) -->
+<div class="row gy-7">
+
+  <!-- Mission -->
+  <div class="col-md-6 col-xl-4">
+    <div class="p-5 bg-white rounded-4 shadow-sm h-100 d-flex flex-column gap-3"
+      data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+      <span class="badge bg-primary text-dark w-fit-content">Our Mission</span>
+      <h4 class="mb-0 text-dark">Empowering Businesses Through Thoughtful Design</h4>
+      <p class="mb-0 text-opacity-75">
+        Our mission is to help brands communicate clearly and confidently online through clean 
+        design, smart technology, and seamless user experiences.
+      </p>
+    </div>
+  </div>
+
+  <!-- Vision -->
+  <div class="col-md-6 col-xl-4">
+    <div class="p-5 bg-white rounded-4 shadow-sm h-100 d-flex flex-column gap-3"
+      data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+      <span class="badge bg-primary text-dark w-fit-content">Our Vision</span>
+      <h4 class="mb-0 text-dark">Creating Digital Solutions That Stand the Test of Time</h4>
+      <p class="mb-0 text-opacity-75">
+        We aim to become a leading African digital studio known for work that is visually 
+        compelling, technically strong, and strategically impactful.
+      </p>
+    </div>
+  </div>
+
+  <!-- Values -->
+  <div class="col-md-6 col-xl-4">
+    <div class="p-5 bg-white rounded-4 shadow-sm h-100 d-flex flex-column gap-3"
+      data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+      <span class="badge bg-primary text-dark w-fit-content">Our Values</span>
+      <h4 class="mb-0 text-dark">Built on Creativity, Quality & Integrity</h4>
+      <p class="mb-0 text-opacity-75">
+        We value precision, transparent communication, innovative thinking, and long-term 
+        relationships. Every project — no matter the size — is delivered with purpose and care.
+      </p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+  </div>
+
+  <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 mb-8 mb-xl-0">
+          <div class="d-flex flex-column gap-8 pe-xl-5">
+            <h2 class="mb-0 text-white">Build something together?</h2>
+            <div class="d-flex flex-column gap-2">
+              <a href="mailto:info@aurioncreative.com" target="_blank" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>
+                info@aurioncreative.com
+              </a>
+              <a href="tel:+27-67-286-2136" target="_blank"
+                class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:map-pin" class="fs-7 text-primary"></iconify-icon>
+                +27-67-286-2136
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
+            <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
+            <li><a class="link-hover fs-5 text-white" id="services" href="#services">Services</a></li>
+            <li><a class="link-hover fs-5 text-white" href="projects.html">Work</a></li>
+            <li><a class="link-hover fs-5 text-white" href="terms-and-conditions.html">Terms</a></li>
+            <li><a class="link-hover fs-5 text-white" href="privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="https://www.linkedin.com/company/aurioncreative">LinkedIn</a></li>
+            <li><a class="link-hover fs-5 text-white" href="https://www.instagram.com/aurion_creative">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-3 mb-8 mb-xl-0">
+          <p class="mb-0 text-white text-opacity-70 text-md-end">© Aurion copyright 2025</p>
+        </div>
+      </div>
+    </div>
+    <p class="mb-0 text-white text-opacity-70 text-md-center mt-10">Distributed by <a class="text-white" href="https://www.aurioncreative.com" target="_blank" target="_blank">Aurion Creative</a></p>
+  </footer>
+
+  <div class="get-template hstack gap-2">
+    
+    <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
+      id="scrollToTopBtn">
+      <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
+    </button>
+  </div>
+
+
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="../assets/libs/aos-master/dist/aos.js"></script>
+  <script src="../assets/js/custom.js"></script>
+  <!-- solar icons -->
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>
