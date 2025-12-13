@@ -2,6 +2,9 @@
 
 
 
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -707,85 +710,127 @@
     </section>
 
 <!--  Request Quote Section (Replaces Pricing Section) -->
-<section class="pricing-section py-5 py-lg-11 py-xl-12 bg-light-gray" id = "quote">
+<section class="pricing-section py-5 py-lg-11 py-xl-12 bg-light-gray" id="quote">
   <div class="container">
     <div class="d-flex flex-column gap-5 gap-xl-10">
 
-      <!-- Heading (Unchanged) -->
+      <!-- Heading -->
       <div class="d-flex flex-column gap-5 gap-xl-11">
         <div class="row gap-7 gap-xl-0">
           <div class="col-xl-4 col-xxl-4">
-            <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-              data-aos-duration="1000">
-              <span
-                class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">07</span>
+            <div class="d-flex align-items-center gap-7 py-2"
+                 data-aos="fade-right"
+                 data-aos-delay="100"
+                 data-aos-duration="1000">
+              <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">
+                07
+              </span>
               <hr class="border-line bg-white">
               <span class="badge text-bg-dark">Request Quote</span>
             </div>
           </div>
+
           <div class="col-xl-8 col-xxl-7">
             <div class="row">
               <div class="col-xxl-8">
-                <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
-                  data-aos-duration="1000">
+                <div class="d-flex flex-column gap-6"
+                     data-aos="fade-up"
+                     data-aos-delay="100"
+                     data-aos-duration="1000">
                   <h2 class="mb-0">Get a Custom Quote</h2>
-                  <p class="fs-5 mb-0 text-opacity-70">Tell us about your project and we’ll craft a tailored solution
-                    that fits your goals, timeline, and budget.</p>
+                  <p class="fs-5 mb-0 text-opacity-70">
+                    Tell us about your project and we’ll craft a tailored solution
+                    that fits your goals, timeline, and budget.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Request A Quote Form (Inserted Here) -->
+        <!-- Quote Form -->
         <div class="row">
           <div class="col-lg-8 col-xl-7 mx-auto">
-            <div class="card w-100" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
+            <div class="card w-100"
+                 data-aos="fade-up"
+                 data-aos-delay="150"
+                 data-aos-duration="1000">
+
               <div class="card-body p-7 p-xxl-5 d-flex flex-column gap-8">
 
                 <div class="d-flex flex-column gap-6">
                   <h5 class="mb-0 fw-medium">Request a Quote</h5>
                   <p class="mb-0 text-opacity-70">
-                    Provide your details below and we’ll get back to you with a detailed estimate.
+                    Select a service and package. For full package details,
+                    consult our AI chatbot.
                   </p>
                 </div>
 
-                <form class="d-flex flex-column gap-6">
+                <form id="quoteForm" class="d-flex flex-column gap-6">
+
                   <div class="row g-4">
 
                     <div class="col-md-6">
-                      <input type="text" class="form-control" placeholder="Your Name" required>
+                      <input type="text"
+                             name="name"
+                             class="form-control"
+                             placeholder="Your Name"
+                             required>
                     </div>
 
                     <div class="col-md-6">
-                      <input type="email" class="form-control" placeholder="Your Email" required>
+                      <input type="email"
+                             name="email"
+                             class="form-control"
+                             placeholder="Your Email"
+                             required>
                     </div>
 
                     <div class="col-md-6">
-                      <input type="text" class="form-control" placeholder="Company (optional)">
-                    </div>
-
-                    <div class="col-md-6">
-                      <select class="form-control" required>
+                      <select id="serviceSelect"
+                              class="form-control"
+                              required>
                         <option value="">Select Service</option>
-                        <option>Web Design</option>
-                        <option>Custom Software</option>
-                        <option>AI Solutions</option>
-                        <option>Branding / Graphics</option>
+                        <option value="ai">AI Chatbots</option>
+                        <option value="web">Web Design</option>
+                        <option value="design">Graphic Design</option>
+                        <option value="branding">Branding</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-6 d-none" id="packageWrapper">
+                      <select id="packageSelect"
+                              class="form-control"
+                              required>
+                        <option value="">Select Package</option>
                       </select>
                     </div>
 
                     <div class="col-12">
-                      <textarea class="form-control" rows="5" placeholder="Project Details" required></textarea>
+                      <textarea name="details"
+                                class="form-control"
+                                rows="5"
+                                placeholder="Project details, timelines, special requirements"
+                                required></textarea>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="fw-bold fs-5">
+                        Estimated Total:
+                        <span id="totalPrice">R0</span>
+                      </div>
                     </div>
 
                   </div>
 
-                  <a href="#" class="btn w-100 justify-content-center">
-                    <span class="btn-text">Submit Request</span>
-                    <iconify-icon icon="lucide:arrow-up-right"
-                      class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-                  </a>
+                  <button type="submit" class="btn w-100 justify-content-center">
+                    <span class="btn-text">Generate Quote</span>
+                    <iconify-icon
+                      icon="lucide:arrow-up-right"
+                      class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm">
+                    </iconify-icon>
+                  </button>
+
                 </form>
 
               </div>
@@ -794,6 +839,7 @@
         </div>
 
       </div>
+
 
       <!-- Logos Slider (Kept Exactly As-Is) -->
       <div class="d-flex flex-column gap-8" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
@@ -1009,7 +1055,7 @@
             <div class="col-xl-6 mb-7 mb-xl-0">
               <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="1000">
-                <a href="blog-detail.html"
+                <a href="blog-detail-1.html"
                   class="resources-img resources-img-first position-relative overflow-hidden d-block">
                   <img src="../assets/images/resources/resources-1.jpg" alt="resources" class="img-fluid">
                 </a>
@@ -1022,7 +1068,7 @@
             <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
               <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200"
                 data-aos-duration="1000">
-                <a href="blog-detail.html" class="resources-img position-relative overflow-hidden d-block">
+                <a href="blog-detail-2.html" class="resources-img position-relative overflow-hidden d-block">
                   <img src="../assets/images/resources/resources-2.jpg" alt="resources" class="img-fluid">
                 </a>
                 <div class="resources-details">
@@ -1034,7 +1080,7 @@
             <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
               <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="300"
                 data-aos-duration="1000">
-                <a href="blog-detail.html" class="resources-img position-relative overflow-hidden d-block">
+                <a href="blog-detail-3.html" class="resources-img position-relative overflow-hidden d-block">
                   <img src="../assets/images/resources/resources-3.jpg" alt="resources" class="img-fluid">
                 </a>
                 <div class="resources-details">
@@ -1164,6 +1210,168 @@
   <script src="../assets/js/custom.js"></script>
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  (function () {
+    emailjs.init("OuOiPPkFs8F68YYyH"); // ✅ Your Public Key
+  })();
+
+  /* ===================== PRICING ===================== */
+
+  const pricing = {
+    ai: {
+      "Starter Chatbot": 3500,
+      "Business Chatbot": 6500,
+      "Advanced AI Assistant": 12000
+    },
+    web: {
+      "Starter Website": 4500,
+      "Business Website": 8500,
+      "E-Commerce Website": 15000
+    },
+    design: {
+      "Single Design": 800,
+      "Design Pack": 2500
+    },
+    branding: {
+      "Branding Starter Bundle": 3500,
+      "Complete Brand Identity": 7500
+    }
+  };
+
+  const SERVICE_ID  = "service_xvdnk3y";     // ✅ Your Service ID
+  const TEMPLATE_ID = "template_sz1jcum";    // ✅ Your Template ID
+
+  const serviceSelect  = document.getElementById("serviceSelect");
+  const packageWrapper = document.getElementById("packageWrapper");
+  const packageSelect  = document.getElementById("packageSelect");
+  const totalPriceEl   = document.getElementById("totalPrice");
+  const quoteForm      = document.getElementById("quoteForm");
+
+  /* ===================== SERVICE → PACKAGE ===================== */
+
+  serviceSelect.addEventListener("change", () => {
+    const service = serviceSelect.value;
+
+    packageSelect.innerHTML = `<option value="">Select Package</option>`;
+    totalPriceEl.textContent = "R0";
+
+    if (!pricing[service]) {
+      packageWrapper.classList.add("d-none");
+      return;
+    }
+
+    Object.entries(pricing[service]).forEach(([name, price]) => {
+      const option = document.createElement("option");
+      option.value = price;
+      option.dataset.packageName = name;
+      option.textContent = `${name} — R${price.toLocaleString()}`;
+      packageSelect.appendChild(option);
+    });
+
+    packageWrapper.classList.remove("d-none");
+  });
+
+  packageSelect.addEventListener("change", () => {
+    const price = Number(packageSelect.value || 0);
+    totalPriceEl.textContent = `R${price.toLocaleString()}`;
+  });
+
+  /* ===================== FORM SUBMIT ===================== */
+
+  quoteForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const selectedPackage =
+      packageSelect.options[packageSelect.selectedIndex];
+
+    const invoiceNumber = "INV-" + Math.floor(100000 + Math.random() * 900000);
+    const today = new Date().toLocaleDateString();
+
+    const unitPrice = Number(packageSelect.value || 0);
+
+    const templateParams = {
+      // Customer
+      customer_name: this.name.value,
+      customer_email: this.email.value,
+      customer_phone: "Provided by customer",
+
+      // Invoice meta
+      invoice_number: invoiceNumber,
+      invoice_date: today,
+      project_reference: "PRJ-" + Math.floor(1000 + Math.random() * 9000),
+
+      // Line item 1 (Selected service)
+      service_name_1: selectedPackage?.dataset.packageName || "",
+      service_description_1: getServiceDescription(serviceSelect.value),
+      quantity_1: 1,
+      unit_price_1: formatCurrency(unitPrice),
+      amount_1: formatCurrency(unitPrice),
+
+      // Line item 2
+      service_name_2: "Website Maintenance & Support",
+      service_description_2: "Monthly maintenance, updates, and technical support",
+      quantity_2: 1,
+      unit_price_2: "R200",
+      amount_2: "R200",
+
+      // Line item 3
+      service_name_3: "Project Setup Fee",
+      service_description_3: "Initial project setup and configuration",
+      quantity_3: 1,
+      unit_price_3: "R500",
+      amount_3: "R500",
+
+      // Total
+      total: calculateTotal(unitPrice),
+
+      // Delivery
+      to_email: this.email.value
+    };
+
+    console.log("Sending quote/invoice:", templateParams);
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+      .then(() => {
+        alert("✅ Quote & proforma invoice sent successfully!");
+        quoteForm.reset();
+        totalPriceEl.textContent = "R0";
+        packageWrapper.classList.add("d-none");
+      })
+      .catch(err => {
+        console.error("EmailJS error:", err);
+        alert("❌ Failed to send quote. Check console.");
+      });
+  });
+
+  /* ===================== HELPERS ===================== */
+
+  function getServiceDescription(serviceKey) {
+    const map = {
+      ai: "Custom AI chatbot development and intelligent automation",
+      web: "Responsive website design and development",
+      design: "Professional graphic design and visual assets",
+      branding: "Complete branding and identity package"
+    };
+    return map[serviceKey] || "Custom digital service";
+  }
+
+  function calculateTotal(mainPrice) {
+    const maintenance = 200;
+    const setup = 500;
+    const total = mainPrice + maintenance + setup;
+    return formatCurrency(total);
+  }
+
+  function formatCurrency(amount) {
+    if (!amount) return "R0";
+    return "R" + amount.toLocaleString();
+  }
+</script>
+
+
 </body>
 
 </html>
