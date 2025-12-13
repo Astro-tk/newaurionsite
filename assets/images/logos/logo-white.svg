@@ -1,0 +1,14 @@
+<svg width="194" height="54" viewBox="0 0 194 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+  
+  <text x="10" y="40" 
+        font-family="'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif" 
+        font-weight="800" 
+        font-size="38" 
+        letter-spacing="-1.5" 
+        fill="#FFFFFF"> 
+    Aurion
+  </text>
+
+  <rect x="138" y="24" width="10" height="10" rx="1" fill="#c1ff72" /> 
+  
+</svg>

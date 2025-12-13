@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  
+  <text x="2" y="26" 
+        font-family="'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif" 
+        font-weight="800" 
+        font-size="26" 
+        fill="#FFFFFF"> 
+    A
+  </text>
+
+  <rect x="21" y="15" width="6" height="6" rx="0.5" fill="#c1ff72" /> 
+  
+</svg>

@@ -1,0 +1,20 @@
+<svg width="194" height="54" viewBox="0 0 194 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2D3436" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+  </defs>
+
+  <text x="10" y="40" 
+        font-family="'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif" 
+        font-weight="800" 
+        font-size="38" 
+        letter-spacing="-1.5" 
+        fill="url(#textGradient)">
+    Aurion
+  </text>
+
+  <rect x="138" y="24" width="10" height="10" rx="1" fill="#000000" />
+  
+</svg>
