@@ -1215,34 +1215,38 @@
 
 <script type="text/javascript">
   (function () {
-    emailjs.init("OuOiPPkFs8F68YYyH"); // ✅ Your Public Key
+    emailjs.init("OuOiPPkFs8F68YYyH");
   })();
 
   /* ===================== PRICING ===================== */
 
   const pricing = {
-    ai: {
-      "Starter Chatbot": 3500,
-      "Business Chatbot": 6500,
-      "Advanced AI Assistant": 12000
-    },
     web: {
-      "Starter Website": 4500,
-      "Business Website": 8500,
-      "E-Commerce Website": 15000
+      Launch: { base: 3500, monthly: 299 },
+      Scale: { base: 5000, monthly: 499 },
+      Dominate: { base: 8000, monthly: 899 }
+    },
+    ai: {
+      Launch: { base: 2000, monthly: 500 },
+      Scale: { base: 2600, monthly: 800 },
+      Dominate: { base: 4000, monthly: 1200 }
     },
     design: {
-      "Single Design": 800,
-      "Design Pack": 2500
+      Launch: 499,
+      Scale: 699,
+      Dominate: 1299
     },
     branding: {
-      "Branding Starter Bundle": 3500,
-      "Complete Brand Identity": 7500
+      webTier: "Launch",
+      aiTier: "Launch",
+      designTier: "Scale"
     }
   };
 
-  const SERVICE_ID  = "service_xvdnk3y";     // ✅ Your Service ID
-  const TEMPLATE_ID = "template_sz1jcum";    // ✅ Your Template ID
+  const SETUP_FEE = 500;
+
+  const SERVICE_ID  = "service_xvdnk3y";
+  const TEMPLATE_ID = "template_sz1jcum";
 
   const serviceSelect  = document.getElementById("serviceSelect");
   const packageWrapper = document.getElementById("packageWrapper");
@@ -1258,80 +1262,117 @@
     packageSelect.innerHTML = `<option value="">Select Package</option>`;
     totalPriceEl.textContent = "R0";
 
+    /* -------- BRANDING -------- */
+    if (service === "branding") {
+      const webBase = pricing.web[pricing.branding.webTier].base;
+      const aiBase = pricing.ai[pricing.branding.aiTier].base;
+      const designBase = pricing.design[pricing.branding.designTier];
+
+      const totalBase = webBase + aiBase + designBase;
+
+      const option = document.createElement("option");
+      option.value = totalBase;
+      option.dataset.base = totalBase;
+      option.dataset.monthly = 0;
+      option.dataset.packageName = "Branding (Web + AI + Design)";
+      option.textContent = `Branding Package — R${totalBase.toLocaleString()}`;
+
+      packageSelect.appendChild(option);
+      packageWrapper.classList.remove("d-none");
+      return;
+    }
+
     if (!pricing[service]) {
       packageWrapper.classList.add("d-none");
       return;
     }
 
-    Object.entries(pricing[service]).forEach(([name, price]) => {
+    Object.entries(pricing[service]).forEach(([name, data]) => {
       const option = document.createElement("option");
-      option.value = price;
+
+      if (service === "design") {
+        option.value = data;
+        option.dataset.base = data;
+        option.dataset.monthly = 0;
+        option.textContent = `${name} — R${data.toLocaleString()}`;
+      } else {
+        option.value = data.base;
+        option.dataset.base = data.base;
+        option.dataset.monthly = data.monthly;
+        option.textContent = `${name} — R${data.base.toLocaleString()}`;
+      }
+
       option.dataset.packageName = name;
-      option.textContent = `${name} — R${price.toLocaleString()}`;
       packageSelect.appendChild(option);
     });
 
     packageWrapper.classList.remove("d-none");
   });
 
+  /* ===================== ESTIMATED TOTAL (SITE ONLY) ===================== */
+
   packageSelect.addEventListener("change", () => {
-    const price = Number(packageSelect.value || 0);
-    totalPriceEl.textContent = `R${price.toLocaleString()}`;
+    const base = Number(packageSelect.selectedOptions[0]?.dataset.base || 0);
+    totalPriceEl.textContent = formatCurrency(base);
   });
 
-  /* ===================== FORM SUBMIT ===================== */
+  /* ===================== FORM SUBMIT (INVOICE) ===================== */
 
   quoteForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const selectedPackage =
-      packageSelect.options[packageSelect.selectedIndex];
+    const option = packageSelect.selectedOptions[0];
+    const service = serviceSelect.value;
+
+    const base = Number(option.dataset.base || 0);
+    const monthly = Number(option.dataset.monthly || 0);
+    const hasMonthly = service === "web" || service === "ai";
+    const hasSetup = service !== "design" && service !== "branding";
 
     const invoiceNumber = "INV-" + Math.floor(100000 + Math.random() * 900000);
     const today = new Date().toLocaleDateString();
 
-    const unitPrice = Number(packageSelect.value || 0);
-
     const templateParams = {
-      // Customer
       customer_name: this.name.value,
       customer_email: this.email.value,
-      customer_phone: "Provided by customer",
 
-      // Invoice meta
       invoice_number: invoiceNumber,
       invoice_date: today,
       project_reference: "PRJ-" + Math.floor(1000 + Math.random() * 9000),
 
-      // Line item 1 (Selected service)
-      service_name_1: selectedPackage?.dataset.packageName || "",
-      service_description_1: getServiceDescription(serviceSelect.value),
+      // Line 1 – Base service
+      service_name_1: option.dataset.packageName,
+      service_description_1: getServiceDescription(service),
       quantity_1: 1,
-      unit_price_1: formatCurrency(unitPrice),
-      amount_1: formatCurrency(unitPrice),
+      unit_price_1: formatCurrency(base),
+      amount_1: formatCurrency(base),
 
-      // Line item 2
-      service_name_2: "Website Maintenance & Support",
-      service_description_2: "Monthly maintenance, updates, and technical support",
-      quantity_2: 1,
-      unit_price_2: "R200",
-      amount_2: "R200",
+      // Line 2 – Hosting, Maintenance & Support
+      service_name_2: hasMonthly ? "Hosting, Maintenance & Support" : "",
+      service_description_2: hasMonthly
+        ? "Hosting, maintenance, updates and technical support"
+        : "",
+      quantity_2: hasMonthly ? 1 : "",
+      unit_price_2: hasMonthly ? formatCurrency(monthly) : "",
+      amount_2: hasMonthly ? formatCurrency(monthly) : "",
 
-      // Line item 3
-      service_name_3: "Project Setup Fee",
-      service_description_3: "Initial project setup and configuration",
-      quantity_3: 1,
-      unit_price_3: "R500",
-      amount_3: "R500",
+      // Line 3 – Project Setup Fee
+      service_name_3: hasSetup ? "Project Setup Fee" : "",
+      service_description_3: hasSetup
+        ? "Initial project setup and configuration"
+        : "",
+      quantity_3: hasSetup ? 1 : "",
+      unit_price_3: hasSetup ? formatCurrency(SETUP_FEE) : "",
+      amount_3: hasSetup ? formatCurrency(SETUP_FEE) : "",
 
-      // Total
-      total: calculateTotal(unitPrice),
+      total: formatCurrency(
+        base +
+        (hasMonthly ? monthly : 0) +
+        (hasSetup ? SETUP_FEE : 0)
+      ),
 
-      // Delivery
       to_email: this.email.value
     };
-
-    console.log("Sending quote/invoice:", templateParams);
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
       .then(() => {
@@ -1340,9 +1381,8 @@
         totalPriceEl.textContent = "R0";
         packageWrapper.classList.add("d-none");
       })
-      .catch(err => {
-        console.error("EmailJS error:", err);
-        alert("❌ Failed to send quote. Check console.");
+      .catch(() => {
+        alert("❌ Failed to send quote.");
       });
   });
 
@@ -1350,28 +1390,23 @@
 
   function getServiceDescription(serviceKey) {
     const map = {
-      ai: "Custom AI chatbot development and intelligent automation",
-      web: "Responsive website design and development",
-      design: "Professional graphic design and visual assets",
-      branding: "Complete branding and identity package"
+      web: "Website design and development",
+      ai: "AI chatbot development and automation",
+      design: "Graphic design services",
+      branding:
+        "Branding package including website, AI foundation and graphic design"
     };
-    return map[serviceKey] || "Custom digital service";
-  }
-
-  function calculateTotal(mainPrice) {
-    const maintenance = 200;
-    const setup = 500;
-    const total = mainPrice + maintenance + setup;
-    return formatCurrency(total);
+    return map[serviceKey] || "Digital service";
   }
 
   function formatCurrency(amount) {
-    if (!amount) return "R0";
-    return "R" + amount.toLocaleString();
+    return "R" + Number(amount || 0).toLocaleString();
   }
 </script>
+
 
 
 </body>
 
 </html>
+
