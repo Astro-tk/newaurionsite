@@ -1,0 +1,70 @@
+/* ============================================================
+   Mobile refinements for aurioncreative.com
+   Loaded after styles.css on every page. Every rule is wrapped
+   in a max-width media query, so nothing changes at 576px and
+   up; desktop and tablet keep the original design.
+   ============================================================ */
+
+@media (max-width: 575.98px) {
+
+  /* --- Display type: keep the drama, lose the sprawl --- */
+  .fs-16 {
+    font-size: 3rem !important; /* page titles: Aurion, Contact, Blog, Projects */
+    line-height: 1.1;
+  }
+  .fs-14 {
+    font-size: 1.875rem !important; /* stat counters */
+  }
+  .nav-link.fs-10 {
+    font-size: 1.25rem !important; /* services tab titles */
+  }
+  .accordion-button.fs-8 {
+    font-size: 1.0625rem !important; /* FAQ questions */
+  }
+
+  /* --- Buttons: compact pills sized for one thumb --- */
+  .btn {
+    padding: 11px 44px 11px 20px;
+    font-size: 1rem;
+    white-space: nowrap; /* never wrap the label inside the pill */
+  }
+  /* Side-by-side button rows stack instead of squeezing (e.g. thank-you page) */
+  .card-body .d-flex.gap-3 {
+    flex-wrap: wrap;
+  }
+  .round-52 {
+    width: 42px !important;
+    height: 42px;
+  }
+
+  /* --- Inner-page banners: less empty headroom above the title --- */
+  .banner-inner-section {
+    min-height: 420px;
+  }
+
+  /* --- Homepage hero: tuck the content closer to the fold --- */
+  .banner-section .pb-8 {
+    padding-bottom: 1.5rem !important;
+  }
+
+  /* --- Partner logo tiles in the marquee --- */
+  .marquee-tag {
+    width: 130px;
+  }
+
+  /* --- Floating WhatsApp button: smaller, tucked into the corner --- */
+  a[aria-label="Chat on WhatsApp"] {
+    width: 48px !important;
+    height: 48px !important;
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+  a[aria-label="Chat on WhatsApp"] iconify-icon {
+    font-size: 24px !important;
+  }
+  /* On the homepage the chatbot bubble owns the bottom-right corner,
+     so the WhatsApp button sits above it (see .wa-above-chat in index.html). */
+  a.wa-above-chat[aria-label="Chat on WhatsApp"] {
+    bottom: 92px !important;
+  }
+}
