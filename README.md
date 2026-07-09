@@ -11,19 +11,17 @@ Iconify icons. All pages live at the repository root; assets live in `assets/`.
 
 These are the only manual steps left. Everything else is done.
 
-### 1. Paste your Formspree form ID (makes the contact forms work)
+### 1. Formspree (done, for reference)
 
-Create or reuse a form at https://formspree.io/forms and copy its ID
-(your previous form used the ID `xnnewgvw`). Replace `YOUR_FORMSPREE_ID` in **two** files:
+The forms are wired to two Formspree endpoints:
 
-| File | Where | Powers |
+| File | Form ID | Powers |
 |---|---|---|
-| `contact.html` | script block at the bottom | Main contact form |
-| `index.html` | script block at the bottom | Homepage contact form, plus a copy of every quote request sent to your inbox |
+| `contact.html` | `xjgqqjdo` | Main contact form |
+| `index.html` | `mgojjrbe` | Homepage contact form, plus a copy of every quote request sent to your inbox |
 
-Until this is set, those forms show their inline error message on submit. The quote
-form still works (it sends the customer an invoice through your existing EmailJS
-setup: `service_g6gr5oq` / `template_sz1jcum`).
+Manage them at https://formspree.io/forms. The quote form also sends the customer an
+invoice through the existing EmailJS setup (`service_g6gr5oq` / `template_sz1jcum`).
 
 ### 2. Create the social sharing image
 

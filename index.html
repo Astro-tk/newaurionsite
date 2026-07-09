@@ -1418,10 +1418,9 @@
 
   /* ===================== FORMSPREE (lead capture) ===================== */
 
-  // TODO: paste your Formspree form ID here (from https://formspree.io/forms).
-  // Your previous Formspree form used the ID 'xnnewgvw'.
+  // Formspree form: "Homepage contact section" (https://formspree.io/f/mgojjrbe).
   // Used by the homepage contact form, and to send you a copy of every quote request.
-  const FORMSPREE_FORM_ID = "YOUR_FORMSPREE_ID";
+  const FORMSPREE_FORM_ID = "mgojjrbe";
 
   const SPINNER_ICON_HTML =
     '<span class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center shadow-sm">' +
@@ -1542,7 +1541,7 @@
 
     // Lead notification to you (Formspree), so every quote request lands in your
     // inbox with zero manual work, even if the invoice email fails.
-    if (FORMSPREE_FORM_ID !== "YOUR_FORMSPREE_ID") {
+    if (FORMSPREE_FORM_ID) {
       sends.push(
         fetch("https://formspree.io/f/" + FORMSPREE_FORM_ID, {
           method: "POST",
