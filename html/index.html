@@ -143,6 +143,11 @@
                           class="img-fluid animate-spin">Services</a>
                     </li>
                     <li class="header-item">
+                      <a href="#faq" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">FAQ</a>
+                    </li>
+                    <li class="header-item">
                       <a href="contact.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
                           src="../assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
                           class="img-fluid animate-spin">Contact</a>
@@ -184,10 +189,23 @@
           </div>
           <div class="d-flex align-items-end gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
             <h1 class="mb-0 fs-16 text-white lh-1">Aurion</h1>
-            <a href="javascript:void(0)" class="p-1 ps-7 bg-primary rounded-pill">
+            <a href="#quote" class="p-1 ps-7 bg-primary rounded-pill">
               <span class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center">
                 <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
               </span>
+            </a>
+          </div>
+          <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <a href="#quote" class="btn">
+              <span class="btn-text">Get an Instant Quote</span>
+              <iconify-icon icon="lucide:arrow-up-right"
+                class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+            </a>
+            <a href="https://wa.me/27655465919?text=Hi%20Aurion%20Creative%2C%20I%27d%20like%20to%20discuss%20a%20project"
+              target="_blank" rel="noopener" class="btn border border-white border-opacity-25">
+              <span class="btn-text">Chat on WhatsApp</span>
+              <iconify-icon icon="mdi:whatsapp"
+                class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
             </a>
           </div>
         </div>
@@ -899,7 +917,22 @@
                     </iconify-icon>
                   </button>
 
+                  <p id="quoteFormError" class="text-danger mb-0 d-none">
+                    Sorry, we couldn't send your quote. Please try again, or message us on WhatsApp using the button below.
+                  </p>
+
                 </form>
+
+                <!-- Success message (shown after the form is hidden) -->
+                <div id="quoteFormSuccess" class="d-none border-start border-4 border-primary ps-6 py-2">
+                  <h5 class="mb-2 fw-medium">Quote sent!</h5>
+                  <p class="mb-3 text-opacity-70">Your quote is on its way to your inbox (check spam just in case). We'll follow up within 24 hours.</p>
+                  <a href="https://wa.me/27655465919?text=Hi%20Aurion%20Creative%2C%20I%20just%20requested%20a%20quote%20on%20your%20website"
+                    target="_blank" rel="noopener" class="hstack gap-2 fw-bold text-dark">
+                    <iconify-icon icon="mdi:whatsapp" class="fs-6"></iconify-icon>
+                    Want to move faster? Chat with us on WhatsApp
+                  </a>
+                </div>
 
               </div>
             </div>
@@ -995,7 +1028,7 @@
 
 
     <!--  FAQ Section -->
-    <section class="faq py-5 py-lg-11 py-xl-12">
+    <section class="faq py-5 py-lg-11 py-xl-12" id="faq">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
           <div class="row gap-7 gap-xl-0">
@@ -1029,12 +1062,12 @@
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                      What services does your Aurion offer?
+                      What services does Aurion Creative offer?
                     </button>
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Web design, AI solutions, branding, and content creation.</div>
+                    <div class="accordion-body pt-0 fs-5 text-dark">AI automation and chatbots (our flagship service), web design and development, custom software, and brand identity. Not sure what you need? Send us a message below and we'll point you in the right direction.</div>
                   </div>
                 </div>
                 <div class="accordion-item">
@@ -1046,7 +1079,7 @@
                   </h2>
                   <div id="flush-collapseTwo" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Anywhere between 5–21 days, depending on size and complexity.</div>
+                    <div class="accordion-body pt-0 fs-5 text-dark">Most projects launch within 5 to 21 days. AI chatbots typically go live in 1 to 3 weeks, and full websites in 2 to 4 weeks. You get a clear timeline in your proposal before we start.</div>
                   </div>
                 </div>
                 <div class="accordion-item">
@@ -1070,10 +1103,10 @@
                   </h2>
                   <div id="flush-collapseFour" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Pricing depends on pages, features, and integrations. Choose from our packages or request a custom quote.</div>
+                    <div class="accordion-body pt-0 fs-5 text-dark">Websites start at R3,500, AI chatbots at R2,000, and design packages at R500. Use the instant quote tool above to get an estimate in seconds, or send us your brief for a custom proposal.</div>
                   </div>
                 </div>
-                <div class="accordion-item border-bottom">
+                <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
@@ -1082,9 +1115,48 @@
                   </h2>
                   <div id="flush-collapseFive" class="accordion-collapse collapse"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Yes, maintenance and updates are available as add-ons or monthly services.</div>
+                    <div class="accordion-body pt-0 fs-5 text-dark">Yes. Hosting, maintenance and support plans start at R300 per month, so your site and chatbot keep running without you lifting a finger.</div>
                   </div>
                 </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                      What can an AI chatbot actually do for my business?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseSix" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body pt-0 fs-5 text-dark">It answers customer questions 24/7, captures leads while you sleep, books appointments, and connects to WhatsApp, your website, and your existing tools. Want a live demo? The chat bubble in the corner of this page is one of our own builds.</div>
+                  </div>
+                </div>
+                <div class="accordion-item border-bottom">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                      How do we get started?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body pt-0 fs-5 text-dark">Use the instant quote tool above, message us on WhatsApp, or send the form below. You get a reply within 24 hours, a free consultation, and a clear proposal; no obligation.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-4 mt-8" data-aos="fade-up" data-aos-delay="300"
+                data-aos-duration="1000">
+                <p class="fs-5 mb-0 fw-bold">Still have a question?</p>
+                <a href="https://wa.me/27655465919?text=Hi%20Aurion%20Creative%2C%20I%20have%20a%20question"
+                  target="_blank" rel="noopener" class="btn">
+                  <span class="btn-text">Ask on WhatsApp</span>
+                  <iconify-icon icon="mdi:whatsapp"
+                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                </a>
+                <a href="#contact" class="btn border border-dark border-opacity-10">
+                  <span class="btn-text">Ask us below</span>
+                  <iconify-icon icon="lucide:arrow-down"
+                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                </a>
               </div>
             </div>
           </div>
@@ -1163,7 +1235,7 @@
     </section>
 
     <!--  Get in touch Section -->
-    <section class="get-in-touch py-5 py-lg-11 py-xl-12">
+    <section class="get-in-touch py-5 py-lg-11 py-xl-12" id="contact">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-10">
           <div class="row gap-7 gap-xl-0">
@@ -1193,25 +1265,43 @@
               Share your project details below, and we’ll respond shortly.</p>
             </div>
             <div class="col-xl-8">
-              <form class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <form id="homeContactForm" class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200"
+                data-aos-duration="1000">
+                <!-- Honeypot (spam protection) -->
+                <input type="text" name="_gotcha" style="display:none">
+                <!-- Email subject line for Formspree notifications -->
+                <input type="hidden" name="_subject" value="New enquiry from aurioncreative.com homepage">
                 <div>
-                  <input type="text" class="form-control border-bottom border-dark" id="formGroupExampleInput"
-                    placeholder="Name">
+                  <input type="text" name="name" class="form-control border-bottom border-dark"
+                    placeholder="Name" required>
                 </div>
                 <div>
-                  <input type="email" class="form-control border-bottom border-dark" id="exampleInputEmail1"
-                    placeholder="Email" aria-describedby="emailHelp">
+                  <input type="email" name="email" class="form-control border-bottom border-dark"
+                    placeholder="Email" required>
                 </div>
                 <div>
-                  <textarea class="form-control border-bottom border-dark" id="exampleFormControlTextarea1"
-                    placeholder="Tell us about your project" rows="3"></textarea>
+                  <textarea name="message" class="form-control border-bottom border-dark"
+                    placeholder="Tell us about your project, or ask us anything" rows="3" required></textarea>
                 </div>
                 <button type="submit" class="btn w-100 justify-content-center">
                   <span class="btn-text">Submit message</span>
                   <iconify-icon icon="lucide:arrow-up-right"
                     class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
                 </button>
+                <p id="homeContactError" class="text-danger mb-0 d-none">
+                  Sorry, your message could not be sent. Please try again, or chat to us on WhatsApp using the button below.
+                </p>
               </form>
+              <!-- Success message (shown after the form is hidden) -->
+              <div id="homeContactSuccess" class="d-none border-start border-4 border-primary ps-6 py-2">
+                <h3 class="mb-2">Message sent!</h3>
+                <p class="fs-5 mb-3">We'll be in touch within 24 hours.</p>
+                <a href="https://wa.me/27655465919?text=Hi%20Aurion%20Creative%2C%20I%20just%20sent%20a%20message%20through%20your%20website"
+                  target="_blank" rel="noopener" class="hstack gap-2 fw-bold text-dark">
+                  <iconify-icon icon="mdi:whatsapp" class="fs-6"></iconify-icon>
+                  Need a faster answer? Chat with us on WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1313,6 +1403,17 @@
 
   const SERVICE_ID  = "service_g6gr5oq";
   const TEMPLATE_ID = "template_sz1jcum";
+
+  /* ===================== FORMSPREE (lead capture) ===================== */
+
+  // TODO: paste your Formspree form ID here (from https://formspree.io/forms).
+  // Your previous Formspree form used the ID 'xnnewgvw'.
+  // Used by the homepage contact form, and to send you a copy of every quote request.
+  const FORMSPREE_FORM_ID = "YOUR_FORMSPREE_ID";
+
+  const SPINNER_ICON_HTML =
+    '<span class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center shadow-sm">' +
+    '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></span>';
 
   const serviceSelect  = document.getElementById("serviceSelect");
   const packageWrapper = document.getElementById("packageWrapper");
@@ -1440,16 +1541,56 @@
       to_email: this.email.value
     };
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
-      .then(() => {
-        alert("✅ Invoice sent successfully! Please check your spam folder if you can't find it");
+    /* Inline loading state on the submit button */
+    const quoteBtn = quoteForm.querySelector('button[type="submit"]');
+    const quoteError = document.getElementById("quoteFormError");
+    const quoteSuccess = document.getElementById("quoteFormSuccess");
+    const quoteBtnIconHTML = quoteBtn.querySelector(".btn-icon").outerHTML;
+    quoteError.classList.add("d-none");
+    quoteBtn.disabled = true;
+    quoteBtn.querySelector(".btn-icon").outerHTML = SPINNER_ICON_HTML;
+
+    const sends = [
+      // Invoice email to the customer (EmailJS)
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+    ];
+
+    // Lead notification to you (Formspree), so every quote request lands in your
+    // inbox with zero manual work, even if the invoice email fails.
+    if (FORMSPREE_FORM_ID !== "YOUR_FORMSPREE_ID") {
+      sends.push(
+        fetch("https://formspree.io/f/" + FORMSPREE_FORM_ID, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify({
+            _subject: "New quote request from aurioncreative.com",
+            name: this.name.value,
+            email: this.email.value,
+            service: getServiceDescription(service),
+            package: option.dataset.packageName,
+            estimated_total: templateParams.total,
+            details: this.details.value
+          })
+        }).then((response) => {
+          if (!response.ok) throw new Error("Formspree returned " + response.status);
+        })
+      );
+    }
+
+    // Success if at least one channel got through; the lead is never lost silently.
+    Promise.allSettled(sends).then((results) => {
+      if (results.some((r) => r.status === "fulfilled")) {
         quoteForm.reset();
         totalPriceEl.textContent = "R0";
         packageWrapper.classList.add("d-none");
-      })
-      .catch(() => {
-        alert("❌ Failed to send quote.");
-      });
+        quoteForm.classList.add("d-none");
+        quoteSuccess.classList.remove("d-none");
+      } else {
+        quoteError.classList.remove("d-none");
+      }
+      quoteBtn.disabled = false;
+      quoteBtn.querySelector(".btn-icon").outerHTML = quoteBtnIconHTML;
+    });
   });
 
   /* ===================== HELPERS ===================== */
@@ -1468,6 +1609,41 @@
   function formatCurrency(amount) {
     return "R" + Number(amount || 0).toLocaleString();
   }
+
+  /* ===================== HOMEPAGE CONTACT FORM (Formspree) ===================== */
+
+  const homeContactForm = document.getElementById("homeContactForm");
+  const homeContactSuccess = document.getElementById("homeContactSuccess");
+  const homeContactError = document.getElementById("homeContactError");
+
+  homeContactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Honeypot: silently drop bot submissions
+    if (homeContactForm._gotcha.value) return;
+
+    const btn = homeContactForm.querySelector('button[type="submit"]');
+    const btnIconHTML = btn.querySelector(".btn-icon").outerHTML;
+    homeContactError.classList.add("d-none");
+    btn.disabled = true;
+    btn.querySelector(".btn-icon").outerHTML = SPINNER_ICON_HTML;
+
+    fetch("https://formspree.io/f/" + FORMSPREE_FORM_ID, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(homeContactForm)
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Formspree returned " + response.status);
+        homeContactForm.classList.add("d-none");
+        homeContactSuccess.classList.remove("d-none");
+      })
+      .catch(() => {
+        homeContactError.classList.remove("d-none");
+        btn.disabled = false;
+        btn.querySelector(".btn-icon").outerHTML = btnIconHTML;
+      });
+  });
 </script>
 
 <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js" defer></script>

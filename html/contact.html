@@ -190,6 +190,12 @@
           >
             Let’s build something impactful. Share your project details below, and we’ll respond shortly.
           </p>
+          <a href="https://wa.me/27655465919?text=Hi%20Aurion%20Creative%2C%20I%27d%20like%20to%20discuss%20a%20project"
+            target="_blank" rel="noopener" class="hstack gap-2 fw-bold text-dark mt-6"
+            data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+            <iconify-icon icon="mdi:whatsapp" class="fs-6"></iconify-icon>
+            Prefer instant answers? Chat on WhatsApp
+          </a>
         </div>
 
         <div class="col-xl-8">
@@ -203,6 +209,9 @@
 
             <!-- Honeypot (spam protection) -->
             <input type="text" name="_gotcha" style="display:none">
+
+            <!-- Email subject line for Formspree notifications -->
+            <input type="hidden" name="_subject" value="New project enquiry from aurioncreative.com">
 
             <div>
               <input
@@ -275,7 +284,12 @@
           <!-- Success message (shown after the form is hidden) -->
           <div id="contactFormSuccess" class="d-none border-start border-4 border-primary ps-6 py-2">
             <h3 class="mb-2">Message sent!</h3>
-            <p class="fs-5 mb-0">We'll be in touch within 24 hours.</p>
+            <p class="fs-5 mb-3">We'll be in touch within 24 hours.</p>
+            <a href="https://wa.me/27655465919?text=Hi%20Aurion%20Creative%2C%20I%20just%20sent%20a%20message%20through%20your%20website"
+              target="_blank" rel="noopener" class="hstack gap-2 fw-bold text-dark">
+              <iconify-icon icon="mdi:whatsapp" class="fs-6"></iconify-icon>
+              Need a faster answer? Chat with us on WhatsApp
+            </a>
           </div>
         </div>
       </div>
@@ -344,26 +358,21 @@
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Formspree submit (https://formspree.io) -->
   <script>
-    // TODO: replace with your EmailJS credentials
-    // (the public key and service ID below are the ones already used by the homepage quote form)
-    const EMAILJS_PUBLIC_KEY  = 'OuOiPPkFs8F68YYyH';
-    // TODO: replace with your EmailJS credentials
-    const EMAILJS_SERVICE_ID  = 'service_g6gr5oq';
-    // TODO: replace with your EmailJS credentials (create a contact-form template in EmailJS)
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-
-    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    // TODO: paste your Formspree form ID here (from https://formspree.io/forms).
+    // Your previous Formspree form used the ID 'xnnewgvw'.
+    const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_ID';
 
     (function () {
       const form       = document.getElementById('contactForm');
       const successBox = document.getElementById('contactFormSuccess');
       const errorBox   = document.getElementById('contactFormError');
       const submitBtn  = form.querySelector('button[type="submit"]');
-      const btnIcon    = submitBtn.querySelector('.btn-icon');
-      const btnIconHTML = btnIcon.outerHTML;
+      const btnIconHTML = submitBtn.querySelector('.btn-icon').outerHTML;
+      const spinnerHTML =
+        '<span class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center shadow-sm">' +
+        '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></span>';
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -373,18 +382,15 @@
 
         errorBox.classList.add('d-none');
         submitBtn.disabled = true;
-        submitBtn.querySelector('.btn-icon').outerHTML =
-          '<span class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center shadow-sm">' +
-          '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></span>';
+        submitBtn.querySelector('.btn-icon').outerHTML = spinnerHTML;
 
-        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-          name:    form.name.value,
-          email:   form.email.value,
-          phone:   form.phone.value,
-          service: form.service.value,
-          message: form.message.value
+        fetch('https://formspree.io/f/' + FORMSPREE_FORM_ID, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
         })
-        .then(function () {
+        .then(function (response) {
+          if (!response.ok) throw new Error('Formspree returned ' + response.status);
           form.classList.add('d-none');
           successBox.classList.remove('d-none');
         })

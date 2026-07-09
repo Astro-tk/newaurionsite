@@ -18,13 +18,22 @@ assets/images/logos/og-image.png
 Until the image exists, link previews on WhatsApp, LinkedIn, Facebook, and X will
 show no image.
 
-## Action required: EmailJS contact-form template
+## Action required: Formspree form ID
 
-The contact form on `html/contact.html` now sends via EmailJS instead of Formspree.
-It reuses the site's existing EmailJS public key and service ID, but needs a new
-template. In the EmailJS dashboard, create a template with the variables
-`{{name}}`, `{{email}}`, `{{phone}}`, `{{service}}`, `{{message}}`, then replace
-`YOUR_TEMPLATE_ID` in the script block at the bottom of `html/contact.html`.
+The lead-capture forms send via Formspree with AJAX (no redirect, inline success
+and error messages). Create or reuse a form at https://formspree.io/forms, copy its
+ID (your previous form used `xnnewgvw`), and paste it in **two places**, replacing
+`YOUR_FORMSPREE_ID`:
+
+1. `html/contact.html`, in the script block at the bottom (main contact form).
+2. `html/index.html`, in the script block at the bottom. This powers the homepage
+   contact form and also emails you a copy of every quote request.
+
+Until the ID is set, the contact forms show their error message on submit, and the
+quote form falls back to only sending the customer their EmailJS invoice.
+
+The quote form's customer-facing invoice email still uses the existing EmailJS
+setup (`service_g6gr5oq` / `template_sz1jcum`); no change needed there.
 
 ## Also in this pass
 
