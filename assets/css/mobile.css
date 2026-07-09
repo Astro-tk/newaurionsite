@@ -62,9 +62,4 @@
   a[aria-label="Chat on WhatsApp"] iconify-icon {
     font-size: 24px !important;
   }
-  /* On the homepage the chatbot bubble owns the bottom-right corner,
-     so the WhatsApp button sits above it (see .wa-above-chat in index.html). */
-  a.wa-above-chat[aria-label="Chat on WhatsApp"] {
-    bottom: 92px !important;
-  }
 }
