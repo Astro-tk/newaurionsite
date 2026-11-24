@@ -12,7 +12,7 @@
 (function () {
   "use strict";
 
-  const CHAT_LIVE = false;
+  const CHAT_LIVE = true;
 
   const API_URL = "https://api.aurioncreative.com/api/chat";
   const PRIVACY_URL = "privacy.html";

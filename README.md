@@ -37,7 +37,8 @@ GitHub Pages redeploys from `main` within a couple of minutes either way.
 | `about-us.html`, `contact.html` | Studio story and method; contact form |
 | `blog.html`, `blog-detail-1..3.html` | Resources |
 | `thank-you.html`, `404.html` | Utility pages (noindex). `404.html` uses `<base href="/">` so it renders at any depth |
-| `test-chat.html` | Hidden copy of the homepage for testing Aurion Assistant: noindex, nofollow, not in the sitemap or any menu, linked from nowhere. It always loads the new chat widget and never the Botpress one |
+| `privacy.html` | Privacy notice (POPIA): what the site, website chat and WhatsApp collect, the processors, retention and rights. Linked from the footer and the chat widget |
+| `test-chat.html` | Hidden copy of the homepage for testing the chat widget: noindex, nofollow, not in the sitemap or any menu, linked from nowhere. It always loads the widget, even when `CHAT_LIVE` is off |
 
 Header menu: Home, AI systems, Products (`index.html#products`), Work, About, Pricing
 (`index.html#pricing`), Contact. `#quote` still works as an alias of `#pricing`.
@@ -83,28 +84,25 @@ an error state and a WhatsApp fallback.
 Prices in the enquiry form live in the `OFFERS` and `PROJECT_COMMAND` objects in the
 script at the bottom of `index.html`. If prices change, update them there, in the pricing
 cards on `index.html`, `ai-systems.html` and `project-command.html`, in the BeeLevel page,
-in the JSON-LD, and in the bot (see below).
+in the JSON-LD, and in the assistant's `knowledge/prices.json` (see below).
 
 ---
 
 ## Chat widget (Aurion Assistant)
 
-`assets/js/aurion-chat.js` is the new chat widget. It talks only to the Aurion Assistant
-backend at `https://api.aurioncreative.com` (repo `aurion-assistant`; setup in its
-`SETUP.md`). No key or secret is in the website. Its styles are the "Aurion Assistant chat
-widget" rules at the end of `assets/css/styles.css`.
+Every page loads `assets/js/aurion-chat.js`, Aurion's own chat widget. It talks only to
+the Aurion Assistant backend at `https://api.aurioncreative.com` (repo `aurion-assistant`;
+setup in its `SETUP.md`). No key or secret is in the website. Its styles are the "Aurion
+Assistant chat widget" rules at the end of `assets/css/styles.css`. Botpress was removed
+when this went live (the tag `pre-own-chatbot` is the last commit with Botpress).
 
-`const CHAT_LIVE = false;` at the top of the script keeps it off every public page; it
-loads only on `test-chat.html`. The `chatbot-go-live` branch switches it on, loads it on
-every page, removes Botpress and adds the privacy notice. To roll back after go-live, set
-`CHAT_LIVE` to `false`.
+The assistant's knowledge and prices live in the `aurion-assistant` repo
+(`knowledge/aurion.md` and `knowledge/prices.json`), not here. When prices change on the
+site, change them there too.
 
-## Chatbot (Botpress)
-
-The bubble on `index.html` and `ai-systems.html` is Aurion's own Botpress assistant. Its
-knowledge lives in the Botpress dashboard, not here. `docs/botpress-knowledge.md` holds the
-current offer, prices, products, FAQ answers and behaviour rules, ready to paste in. Update
-the bot whenever prices or offers change.
+To switch the widget off quickly, set `const CHAT_LIVE = false;` at the top of the script;
+it then loads only on `test-chat.html`. `privacy.html` is the privacy notice the widget
+links to.
 
 ---
 
@@ -170,7 +168,7 @@ After deploying, resubmit `sitemap.xml` in Google Search Console and request ind
 | Change | Where |
 |---|---|
 | Title or description | `<head>` of the page (also the matching `og:` and `twitter:` tags) |
-| Prices | Pricing cards and `OFFERS` script in `index.html`; `ai-systems.html`; `project-command.html`; `beelevel.html`; JSON-LD; bot |
+| Prices | Pricing cards and `OFFERS` script in `index.html`; `ai-systems.html`; `project-command.html`; `beelevel.html`; JSON-LD; `aurion-assistant` repo |
 | FAQ | `#faq` in `index.html`; questions on `ai-systems.html` |
 | Header or footer | Every page, identically, then run `python scripts/check_partials.py` |
 | WhatsApp number | Search for `wa.me/27655465919` and `+27-65-546-5919` |

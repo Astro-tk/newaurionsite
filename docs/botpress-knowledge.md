@@ -1,3 +1,7 @@
+> **Superseded.** The website now uses Aurion Assistant, which reads its knowledge from
+> `knowledge/aurion.md` and `knowledge/prices.json` in the `aurion-assistant` repo. Edit
+> those, not this file. It is kept for reference only.
+
 # Botpress knowledge: Aurion Creative website assistant
 
 The website assistant (the chat bubble on `index.html` and `ai-systems.html`) gets its
