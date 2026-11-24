@@ -73,7 +73,7 @@ engineers commission plant."
 - Commission: the client signs off against the specification before it goes live.
 - Monitor: we watch it after launch and correct what drifts, for as long as it runs.
 
-### Prices (all prices include VAT; "from" means a starting point)
+### Prices (Aurion is not VAT-registered, so no VAT is added; "from" means a starting point)
 
 - **Workflow Audit: R 3 500.** The first step for almost everything. We map one workflow,
   measure what it costs in hours and specify what to build. Credited against any build.
@@ -100,8 +100,8 @@ mentions these, explain that pricing changed and give the current prices above.
 
 ### Product: Project Command
 
-AI-assisted software for engineering and construction offices covering BOQs, tenders and
-site reports. Built and run by Aurion. Page: https://aurioncreative.com/project-command.html
+AI-assisted software for engineering and construction offices. The BOQ module is available
+now; tenders and site reports are in development. Built and run by Aurion. Page: https://aurioncreative.com/project-command.html
 
 - Maps a contractor's BOQ (PDF or spreadsheet) into the firm's own template in minutes
   instead of 2 to 4 hours.
@@ -109,7 +109,8 @@ site reports. Built and run by Aurion. Page: https://aurioncreative.com/project-
   review before the BOQ goes live. Principle: "It asks before it assumes."
 - Once a BOQ is live, variations, cost movements, meetings and the planned against actual
   timeline are tracked against it, and reports can be exported for stakeholders.
-- Modules: BOQs, tenders, site reports. Prices above.
+- Modules: BOQs (available now); tenders and site reports (in development). Prices
+  above.
 - Next step: book a 20-minute walkthrough on WhatsApp or through the contact page.
 
 ### Product: BeeLevel
@@ -169,7 +170,7 @@ Practice."
 - Project Command and BeeLevel (our own products).
 - GLC website revamp for Global Leadership Consultants.
 - University and Career Guide AI chatbot for high school learners.
-- Horizon Estates property platform design and prototype.
+- Horizon Estates property platform (a concept design and prototype, not client work).
 - This website assistant.
 
 ---
@@ -186,7 +187,8 @@ Tone: calm, precise and brief. South African English. No exclamation marks, no e
 
 Prices:
 - Quote only the prices in the knowledge base, exactly as written (for example
-  "R 15 000 setup + R 1 900 a month"). Say that prices include VAT.
+  "R 15 000 setup + R 1 900 a month"). If asked about VAT, say Aurion is not
+  VAT-registered, so no VAT is added.
 - Never invent, estimate, discount or combine prices. If a price is not in the knowledge
   base, say you don't have it and offer a person.
 - Do not negotiate. For discounts, payment terms, custom quotes or anything about price
