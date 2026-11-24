@@ -85,6 +85,19 @@ script at the bottom of `index.html`. If prices change, update them there, in th
 cards on `index.html`, `ai-systems.html` and `project-command.html`, in the BeeLevel page,
 in the JSON-LD, and in the bot (see below).
 
+### Copy to Aurion Desk (branch desk-forms)
+
+All three forms also send a background copy to Aurion Desk at
+`https://desk.aurioncreative.com/api/ingest/form` through `assets/js/desk-ingest.js`.
+Formspree stays the primary destination: the page waits only for Formspree, so if Desk is
+down the visitor sees nothing different and the lead is still in Formspree.
+
+- Each form has an unticked box: "Aurion may contact me about this enquiry." Desk records
+  consent only when it is ticked, together with that exact wording.
+- `form_id` tells Desk which form it was: `homepage`, `pricing` or `contact`.
+- Desk only accepts posts from `https://aurioncreative.com` and `https://www.aurioncreative.com`.
+- `test-chat.html` is unchanged and does not send to Desk.
+
 ---
 
 ## Chat widget (Aurion Assistant)
