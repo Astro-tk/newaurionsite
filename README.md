@@ -119,7 +119,8 @@ testimonials from clients who have agreed to be named.
 ## Copy rules (keep to these when editing)
 
 - South African English. No em dashes, emojis or exclamation marks.
-- Money as `R 1 234 567.89`; dates as `24 Nov 2026`. Published prices include VAT.
+- Money as `R 1 234 567.89`; dates as `24 Nov 2026`. Aurion is not VAT-registered: pricing
+  notes say "Aurion is not VAT-registered, so no VAT is added." Never say VAT is included.
 - No unprovable claims, invented testimonials or client logos.
 - BeeLevel: never say it calculates B-BBEE points or levels, improves a level, guarantees
   compliance or certifies anything. Say "built with POPIA in mind", never "POPIA
@@ -129,6 +130,8 @@ testimonials from clients who have agreed to be named.
 - B-BBEE: Aurion is a Level 1 B-BBEE contributor (EME). It appears as a calm trust line
   under the hero buttons, in the footer, the pricing section, the About page and the
   JSON-LD, with "B-BBEE affidavit available on request". Never the hero headline.
+- Project Command: the BOQ module is available; tenders and site reports are marked "in
+  development" until they ship. Horizon Estates is labelled "Concept", not client work.
 - Design: reuse existing classes. Small CSS additions go in the "Aurion studio additions"
   block at the end of `assets/css/styles.css`. Mobile-only rules live in
   `assets/css/mobile.css`.
