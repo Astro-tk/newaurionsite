@@ -491,7 +491,7 @@
                         a QS for review.</p>
                     </div>
                     <div class="position-relative z-1">
-                      <a href="project-command.html" class="btn bg-dark">
+                      <a href="project-command.html" class="btn bg-white">
               <span class="btn-text">See Project Command</span>
               <iconify-icon icon="lucide:arrow-up-right"
                 class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
@@ -999,7 +999,7 @@
           <!-- Enquiry form -->
           <div class="row" id="enquiry">
             <div class="col-lg-8 col-xl-7 mx-auto">
-              <div class="card w-100 bg-light-gray" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
+              <div class="card w-100 shadow-sm" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
                 <div class="card-body p-7 p-xxl-5 d-flex flex-column gap-8">
                   <div class="d-flex flex-column gap-4">
                     <h3 class="mb-0 fs-8">Send an enquiry</h3>
@@ -1013,15 +1013,15 @@
                     <div class="row g-4">
                       <div class="col-md-6">
                         <label for="quoteName" class="visually-hidden">Your name</label>
-                        <input type="text" id="quoteName" name="name" class="form-control" placeholder="Your name" required>
+                        <input type="text" id="quoteName" name="name" class="form-control border-bottom border-dark" placeholder="Your name" required>
                       </div>
                       <div class="col-md-6">
                         <label for="quoteEmail" class="visually-hidden">Your email</label>
-                        <input type="email" id="quoteEmail" name="email" class="form-control" placeholder="Your email" required>
+                        <input type="email" id="quoteEmail" name="email" class="form-control border-bottom border-dark" placeholder="Your email" required>
                       </div>
                       <div class="col-md-6">
                         <label for="serviceSelect" class="visually-hidden">What do you need?</label>
-                        <select id="serviceSelect" name="service" class="form-control" required>
+                        <select id="serviceSelect" name="service" class="form-control border-bottom border-dark" required>
                           <option value="">What do you need?</option>
                           <option value="audit">Workflow Audit</option>
                           <option value="desk">AI Enquiry Desk</option>
@@ -1033,7 +1033,7 @@
                       </div>
                       <div class="col-md-6 d-none" id="moduleWrapper">
                         <label for="moduleSelect" class="visually-hidden">How many modules?</label>
-                        <select id="moduleSelect" name="modules" class="form-control">
+                        <select id="moduleSelect" name="modules" class="form-control border-bottom border-dark">
                           <option value="1">One module</option>
                           <option value="2">Two modules</option>
                           <option value="3">All three modules</option>
@@ -1041,7 +1041,7 @@
                       </div>
                       <div class="col-12">
                         <label for="quoteDetails" class="visually-hidden">Details</label>
-                        <textarea id="quoteDetails" name="details" class="form-control" rows="5"
+                        <textarea id="quoteDetails" name="details" class="form-control border-bottom border-dark" rows="5"
                           placeholder="The work you want to take off your team, rough volumes, and any deadline" required></textarea>
                       </div>
                       <div class="col-12">
@@ -1615,6 +1615,20 @@
     }
   };
   const DEFAULT_PRICE_TEXT = "choose an option to see a starting price.";
+
+  // Old links used #quote; treat it as an alias of #pricing.
+  function goToPricingAlias() {
+    if (window.location.hash !== "#quote") return;
+    history.replaceState(null, "", window.location.pathname + window.location.search + "#pricing");
+    document.getElementById("pricing").scrollIntoView();
+  }
+  goToPricingAlias();
+  window.addEventListener("hashchange", goToPricingAlias);
+  // Re-align on load: images and the carousel can shift sections after the first jump.
+  window.addEventListener("load", () => {
+    const target = window.location.hash && document.getElementById(window.location.hash.slice(1));
+    if (target) target.scrollIntoView();
+  });
 
   const quoteForm      = document.getElementById("quoteForm");
   const serviceSelect  = document.getElementById("serviceSelect");
