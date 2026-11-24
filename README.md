@@ -124,7 +124,11 @@ testimonials from clients who have agreed to be named.
 - BeeLevel: never say it calculates B-BBEE points or levels, improves a level, guarantees
   compliance or certifies anything. Say "built with POPIA in mind", never "POPIA
   compliant". Any BeeLevel page carries the disclaimer verbatim.
-- AI: never "fully autonomous" or "replaces your staff".
+- AI: never "fully autonomous" or "replaces your staff". The AI Enquiry Desk is always an
+  enquiry system, never described as a bare chatbot.
+- B-BBEE: Aurion is a Level 1 B-BBEE contributor (EME). It appears as a calm trust line
+  under the hero buttons, in the footer, the pricing section, the About page and the
+  JSON-LD, with "B-BBEE affidavit available on request". Never the hero headline.
 - Design: reuse existing classes. Small CSS additions go in the "Aurion studio additions"
   block at the end of `assets/css/styles.css`. Mobile-only rules live in
   `assets/css/mobile.css`.
