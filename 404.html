@@ -1,35 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-ZA">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
   <meta name="robots" content="noindex, follow">
   <title>Page Not Found | Aurion Creative</title>
-  <meta name="description" content="Page not found — but Aurion Creative can help you build something worth finding. Head back to our homepage or contact us.">
+  <meta name="description" content="This page has moved or never existed. Some older Aurion Creative pages were retired; try the home page, our work, or the contact page to find what you need.">
 
   <link rel="canonical" href="https://aurioncreative.com/404.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Aurion Creative">
+  <meta property="og:locale" content="en_ZA">
   <meta property="og:title" content="Page Not Found | Aurion Creative">
-  <meta property="og:description" content="Page not found — but Aurion Creative can help you build something worth finding. Head back to our homepage or contact us.">
+  <meta property="og:description" content="This page has moved or never existed. Some older Aurion Creative pages were retired; try the home page, our work, or the contact page to find what you need.">
   <meta property="og:url" content="https://aurioncreative.com/404.html">
   <meta property="og:image" content="https://aurioncreative.com/assets/images/logos/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@aurioncreative">
   <meta name="twitter:title" content="Page Not Found | Aurion Creative">
-  <meta name="twitter:description" content="Page not found — but Aurion Creative can help you build something worth finding. Head back to our homepage or contact us.">
+  <meta name="twitter:description" content="This page has moved or never existed. Some older Aurion Creative pages were retired; try the home page, our work, or the contact page to find what you need.">
   <meta name="twitter:image" content="https://aurioncreative.com/assets/images/logos/og-image.png">
-  <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logos/favicon.svg">
   <link rel="stylesheet" href="assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/libs/aos-master/dist/aos.css">
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="assets/css/mobile.css" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/mobile.css">
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-936RHVHQ8W"></script>
   <script>
@@ -42,44 +44,175 @@
 
 <body>
 
+  <!-- Header (identical on every page; checked by scripts/check_partials.py) -->
+  <header class="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
+    <div class="container">
+      <div class="header-wrapper d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <a href="index.html" class="logo-white">
+            <img src="assets/images/logos/logo-white.svg" alt="Aurion Creative home" class="img-fluid">
+          </a>
+          <a href="index.html" class="logo-dark">
+            <img src="assets/images/logos/logo-dark.svg" alt="Aurion Creative home" class="img-fluid">
+          </a>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+
+          <div class="btn-group">
+            <button
+              class="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle"
+              type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false" aria-label="Open menu">
+              <iconify-icon icon="solar:hamburger-menu-line-duotone" class="menu-icon fs-8 text-dark"></iconify-icon>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end p-4">
+              <div class="d-flex flex-column gap-6">
+                <div class="hstack justify-content-between border-bottom pb-6">
+                  <p class="mb-0 fs-5 text-dark">Menu</p>
+                  <button type="button" class="btn-close opacity-75" aria-label="Close"></button>
+                </div>
+                <div class="d-flex flex-column gap-3">
+                  <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
+                    <li class="header-item">
+                      <a href="index.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Home</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="ai-systems.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">AI systems</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="index.html#products" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Products</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="projects.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Work</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="about-us.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">About</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="index.html#pricing" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Pricing</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="contact.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <a class="text-dark" href="tel:+27-65-546-5919">+27-65-546-5919</a>
+                  <a class="fs-8 text-dark fw-bold" href="mailto:info@aurioncreative.com">info@aurioncreative.com</a>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <!--  Page Wrapper -->
   <div class="page-wrapper overflow-hidden">
 
-    <!--  Get in touch Section -->
-    <section
-      class="bg-light-gray border-top border-primary border-4 d-flex align-items-center justify-content-center min-vh-100">
-      <div class="container py-3">
+    <!--  Not found Section -->
+    <section class="bg-light-gray d-flex align-items-center justify-content-center min-vh-100">
+      <div class="container py-11">
         <div class="d-flex flex-column justify-content-center gap-8">
-          <img src="assets/images/backgrounds/404.svg" alt="404" width="550" class="img-fluid mx-auto"
+          <img src="assets/images/backgrounds/404.svg" alt="404, page not found" width="550" class="img-fluid mx-auto"
             data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
-          <h2 class="mb-0 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Oops! Page Not
-            Found</h2>
-          <a href="index.html" class="btn mx-auto" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-            <span class="btn-text">Back to Home</span>
-            <iconify-icon icon="lucide:arrow-up-right"
-              class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-          </a>
+          <h1 class="mb-0 text-center fs-10" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">This page
+            has moved or never existed.</h1>
+          <p class="mb-0 text-center fs-5">Some of our older pages have been retired. Try one of these instead.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <a href="index.html" class="btn">
+              <span class="btn-text">Home</span>
+              <iconify-icon icon="lucide:arrow-up-right"
+                class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+            </a>
+            <a href="projects.html" class="btn">
+              <span class="btn-text">Work</span>
+              <iconify-icon icon="lucide:arrow-up-right"
+                class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+            </a>
+            <a href="contact.html" class="btn">
+              <span class="btn-text">Contact</span>
+              <iconify-icon icon="lucide:arrow-up-right"
+                class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
   </div>
 
+  <!-- Footer (identical on every page; checked by scripts/check_partials.py) -->
+  <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 mb-8 mb-xl-0">
+          <div class="d-flex flex-column gap-8 pe-xl-5">
+            <h2 class="mb-0 text-white">Build something together?</h2>
+            <div class="d-flex flex-column gap-2">
+              <a href="mailto:info@aurioncreative.com" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
+                info@aurioncreative.com
+              </a>
+              <a href="tel:+27-65-546-5919" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:phone" class="fs-7 text-primary"></iconify-icon>
+                +27-65-546-5919
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="index.html">Home</a></li>
+            <li><a class="link-hover fs-5 text-white" href="ai-systems.html">AI systems</a></li>
+            <li><a class="link-hover fs-5 text-white" href="index.html#products">Products</a></li>
+            <li><a class="link-hover fs-5 text-white" href="projects.html">Work</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="about-us.html">About</a></li>
+            <li><a class="link-hover fs-5 text-white" href="contact.html">Contact</a></li>
+            <li><a class="link-hover fs-5 text-white" href="https://www.linkedin.com/company/aurioncreative" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="link-hover fs-5 text-white" href="https://www.instagram.com/aurion_creative" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-3 mb-8 mb-xl-0">
+          <p class="mb-0 text-white text-opacity-70 text-md-end">&copy; <span class="js-year">2026</span> Aurion Creative (Pty) Ltd.<br>
+            Reg. 2026/320259/07.<br>
+            Level 1 B-BBEE contributor.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <div class="get-template hstack gap-2">
-    
     <button class="btn bg-primary p-2 round-52 rounded-circle hstack justify-content-center flex-shrink-0"
-      id="scrollToTopBtn">
+      id="scrollToTopBtn" aria-label="Back to top">
       <iconify-icon icon="lucide:arrow-up" class="fs-7 text-dark"></iconify-icon>
     </button>
   </div>
-
 
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
   <script src="assets/libs/aos-master/dist/aos.js"></script>
   <script src="assets/js/custom.js"></script>
-  <!-- solar icons -->
+  <!-- Iconify (solar, lucide and mdi icons) -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
   <!-- WhatsApp floating button -->
   <a href="https://wa.me/27655465919?text=Hi%20Aurion%20Creative%2C%20I%27d%20like%20to%20discuss%20a%20project"

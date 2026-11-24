@@ -16790,3 +16790,30 @@ ul {
   color: var(--bs-dark);
   background-color: var(--bs-white);
 }/*# sourceMappingURL=styles.css.map */
+/* ============================================================
+   Aurion studio additions (Nov 2026 rebuild)
+   Small, hand-written rules only. Everything else reuses the
+   existing theme classes above.
+   ============================================================ */
+
+/* Anchored sections clear the fixed header when jumped to */
+section[id],
+#enquiry,
+#chatbots,
+#modules,
+#ai-pricing {
+  scroll-margin-top: 96px;
+}
+
+/* #quote is kept as an alias of #pricing so old links still land on pricing */
+.anchor-alias {
+  display: block;
+  position: relative;
+  top: -96px;
+  height: 0;
+}
+
+/* BeeLevel accent: use on the product name only */
+.text-beelevel {
+  color: #E8A317 !important;
+}
