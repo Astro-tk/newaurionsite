@@ -27,7 +27,9 @@ with the discipline engineers bring to plant: the work is specified, tested on r
 commissioned, then monitored.
 
 Founded by Thato Kgopa, mechanical engineer (University of Pretoria).
-Company: Aurion Creative (Pty) Ltd, Reg. 2026/320259/07. Level 1 B-BBEE contributor.
+Company: Aurion Creative (Pty) Ltd, Reg. 2026/320259/07.
+B-BBEE: Level 1 B-BBEE contributor (EME), 135% procurement recognition. A B-BBEE affidavit
+is available on request (ask the team by email or WhatsApp).
 
 Contact: info@aurioncreative.com, +27 65 546 5919 (call or WhatsApp),
 https://aurioncreative.com/contact.html. Every enquiry gets a reply within 24 hours.
@@ -42,10 +44,15 @@ businesses that want AI doing real work. Engineering is how we work, not who we 
    automation and internal AI tools. Engineered with tolerances: every output carries a
    confidence level, anything uncertain goes to a person for review, and the system logs
    what it did and why.
-2. **AI chatbots and assistants.** Website and WhatsApp assistants that answer customers,
-   capture leads, book appointments and hand over to a person when they should. Trained on
-   the client's own information, they never invent prices or promises, and are monitored
-   after launch. This assistant is a live example.
+2. **AI chatbots and assistants**, in two tiers. Both are trained on the client's own
+   information, never invent prices or promises, and are monitored after launch. This
+   assistant is a live example of the first tier.
+   - **AI Website Assistant:** website chat, lead capture to email or Google Sheets, and
+     handover to a person.
+   - **AI Enquiry Desk:** an enquiry system (always call it that, never "just a chatbot")
+     on the website and WhatsApp, with CRM integration (HubSpot, Zoho or Pipedrive),
+     appointment booking into the client's calendar, lead qualification, handover to a
+     person and a monthly performance report.
 3. **Custom software and platforms.** Portals, dashboards and internal systems built
    around how a team already works, including the websites that front them.
 
@@ -71,8 +78,12 @@ engineers commission plant."
 - **Workflow Audit: R 3 500.** The first step for almost everything. We map one workflow,
   measure what it costs in hours and specify what to build. Credited against any build.
   Free if we find less than 10 hours a month to save.
-- **AI Enquiry Desk (website and WhatsApp chatbot): R 15 000 setup + R 1 900 a month.**
-  WhatsApp messaging fees from Meta are passed through at cost.
+- **AI Website Assistant: R 7 500 setup + R 950 a month.** Website chat trained on the
+  client's information, lead capture to email or Google Sheets, handover to a person.
+- **AI Enquiry Desk: R 15 000 setup + R 1 900 a month.** An enquiry system for the website
+  and WhatsApp: CRM integration (HubSpot, Zoho or Pipedrive), appointment booking into the
+  client's calendar, lead qualification, handover to a person and a monthly performance
+  report. WhatsApp messaging fees from Meta are passed through at cost.
 - **AI systems and custom software: from R 45 000 setup + from R 4 500 a month.** The
   monthly fee covers hosting, monitoring and support. We quote a fixed price after the
   Workflow Audit.
@@ -128,10 +139,17 @@ Practice."
 - **What does Aurion Creative build?** AI systems and automation, AI chatbots and
   assistants, and custom software and platforms. We also build and run Project Command and
   BeeLevel.
-- **How does an AI chatbot avoid wrong answers?** It is trained only on the client's
-  information and set up never to invent a price or a promise. When a question falls
-  outside what it knows, or a customer asks for a person, it hands over to the client's
-  team. After launch we review conversations and correct what needs correcting.
+- **How do your AI chatbots avoid wrong answers?** Both tiers are trained only on the
+  client's information and set up never to invent a price or a promise. When a question
+  falls outside what they know, or a customer asks for a person, they hand over. The AI
+  Website Assistant sends the lead and conversation to email or a Google Sheet; the AI
+  Enquiry Desk qualifies the lead, books it into the calendar or logs it in the CRM, and
+  reports monthly. After launch we review conversations and correct what needs correcting.
+- **Which chatbot tier do we need?** Website chat with leads to email or Google Sheets: the
+  AI Website Assistant. WhatsApp too, or leads qualified, booked and logged in a CRM with a
+  monthly report: the AI Enquiry Desk.
+- **What is your B-BBEE status?** Aurion Creative is a Level 1 B-BBEE contributor (EME),
+  with 135% procurement recognition. A B-BBEE affidavit is available on request.
 - **How long does a project take?** Specify 1 to 2 weeks, Build 2 to 6 weeks, Test 1 to 2
   weeks, then a commissioning sign-off and ongoing monitoring. An AI Enquiry Desk is
   usually live in 2 to 3 weeks.
@@ -199,7 +217,9 @@ the enquiry form at https://aurioncreative.com/#pricing.
 
 Ask the bot these and check the answers:
 
-1. "How much is a chatbot?" Expect R 15 000 setup + R 1 900 a month, Meta fees at cost.
+1. "How much is a chatbot?" Expect both tiers: AI Website Assistant R 7 500 setup + R 950 a
+   month; AI Enquiry Desk R 15 000 setup + R 1 900 a month (an enquiry system, Meta fees at
+   cost).
 2. "Can I get a website for R3,500?" Expect: pricing changed; current prices given.
 3. "Can you do it for R 10 000?" Expect a hand-over to a person, no counter-offer.
 4. "Will BeeLevel get us to Level 1?" Expect: no, it does not calculate or improve levels,
@@ -207,3 +227,5 @@ Ask the bot these and check the answers:
 5. "What does Project Command do with lines it's unsure of?" Expect: confidence level,
    low-confidence lines go to a QS.
 6. "Do you build mobile games?" Expect: not covered, hand-over offered.
+7. "What is your B-BBEE level?" Expect: Level 1 contributor (EME), 135% procurement
+   recognition, affidavit available on request.
