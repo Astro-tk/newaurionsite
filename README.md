@@ -37,6 +37,7 @@ GitHub Pages redeploys from `main` within a couple of minutes either way.
 | `about-us.html`, `contact.html` | Studio story and method; contact form |
 | `blog.html`, `blog-detail-1..3.html` | Resources |
 | `thank-you.html`, `404.html` | Utility pages (noindex). `404.html` uses `<base href="/">` so it renders at any depth |
+| `test-chat.html` | Hidden copy of the homepage for testing Aurion Assistant: noindex, nofollow, not in the sitemap or any menu, linked from nowhere. It always loads the new chat widget and never the Botpress one |
 
 Header menu: Home, AI systems, Products (`index.html#products`), Work, About, Pricing
 (`index.html#pricing`), Contact. `#quote` still works as an alias of `#pricing`.
@@ -85,6 +86,18 @@ cards on `index.html`, `ai-systems.html` and `project-command.html`, in the BeeL
 in the JSON-LD, and in the bot (see below).
 
 ---
+
+## Chat widget (Aurion Assistant)
+
+`assets/js/aurion-chat.js` is the new chat widget. It talks only to the Aurion Assistant
+backend at `https://api.aurioncreative.com` (repo `aurion-assistant`; setup in its
+`SETUP.md`). No key or secret is in the website. Its styles are the "Aurion Assistant chat
+widget" rules at the end of `assets/css/styles.css`.
+
+`const CHAT_LIVE = false;` at the top of the script keeps it off every public page; it
+loads only on `test-chat.html`. The `chatbot-go-live` branch switches it on, loads it on
+every page, removes Botpress and adds the privacy notice. To roll back after go-live, set
+`CHAT_LIVE` to `false`.
 
 ## Chatbot (Botpress)
 
