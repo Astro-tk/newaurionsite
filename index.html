@@ -1071,6 +1071,10 @@
                       </div>
                     </div>
 
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="quoteConsent" name="consent" value="yes">
+                      <label class="form-check-label" for="quoteConsent">Aurion may contact me about this enquiry.</label>
+                    </div>
                     <button type="submit" class="btn w-100 justify-content-center">
                       <span class="btn-text">Send enquiry</span>
                       <iconify-icon icon="lucide:arrow-up-right"
@@ -1497,6 +1501,10 @@
                   <textarea id="homeMessage" name="message" class="form-control border-bottom border-dark"
                     placeholder="Tell us about the work, or ask us anything" rows="3" required></textarea>
                 </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="homeConsent" name="consent" value="yes">
+                  <label class="form-check-label" for="homeConsent">Aurion may contact me about this enquiry.</label>
+                </div>
                 <button type="submit" class="btn w-100 justify-content-center">
                   <span class="btn-text">Send message</span>
                   <iconify-icon icon="lucide:arrow-up-right"
@@ -1583,6 +1591,8 @@
   <script src="assets/js/custom.js"></script>
   <!-- Iconify (solar, lucide and mdi icons) -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <!-- Aurion Desk gets a background copy of each enquiry; Formspree stays primary -->
+  <script src="assets/js/desk-ingest.js"></script>
   <script>
   /* =====================================================================
      Pricing selector and enquiry form (Formspree only; EmailJS was removed)
@@ -1705,6 +1715,15 @@
     quoteBtn.disabled = true;
     quoteBtn.querySelector(".btn-icon").outerHTML = SPINNER_ICON_HTML;
 
+    if (window.aurionDesk) {
+      window.aurionDesk.send(quoteForm, "pricing", {
+        name: quoteForm.elements["name"].value,
+        email: quoteForm.elements["email"].value,
+        message: "Needs: " + offer.label + (isCommand ? " (" + moduleSelect.options[moduleSelect.selectedIndex].text + ")" : "") +
+          "\n\n" + quoteForm.elements["details"].value
+      });
+    }
+
     fetch("https://formspree.io/f/" + FORMSPREE_FORM_ID, {
       method: "POST",
       headers: { "Accept": "application/json", "Content-Type": "application/json" },
@@ -1715,7 +1734,8 @@
         service: offer.label,
         modules: isCommand ? moduleSelect.options[moduleSelect.selectedIndex].text : "n/a",
         indicative_price: currentPriceText(),
-        details: quoteForm.elements["details"].value
+        details: quoteForm.elements["details"].value,
+        consent: quoteForm.elements["consent"].checked ? "yes" : "no"
       })
     })
       .then((response) => {
@@ -1752,6 +1772,14 @@
     homeContactError.classList.add("d-none");
     btn.disabled = true;
     btn.querySelector(".btn-icon").outerHTML = SPINNER_ICON_HTML;
+
+    if (window.aurionDesk) {
+      window.aurionDesk.send(homeContactForm, "homepage", {
+        name: homeContactForm.elements["name"].value,
+        email: homeContactForm.elements["email"].value,
+        message: homeContactForm.elements["message"].value
+      });
+    }
 
     fetch("https://formspree.io/f/" + FORMSPREE_FORM_ID, {
       method: "POST",
