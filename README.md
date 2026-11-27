@@ -36,6 +36,7 @@ GitHub Pages redeploys from `main` within a couple of minutes either way.
 | `work-glc-website.html`, `work-career-guide-chatbot.html`, `work-horizon-estates.html`, `work-aurion-assistant.html` | Case studies |
 | `about-us.html`, `contact.html` | Studio story and method; contact form |
 | `blog.html`, `blog-detail-1..3.html` | Resources |
+| `links.html` | Bio links page for every social profile, at **aurioncreative.com/links** (GitHub Pages serves it without .html). Retro terminal design, standalone (no shared header or footer). Views and clicks are counted, cookieless, in Aurion Desk > Bio links. Use one link per platform: `?via=ig`, `?via=li`, `?via=fb`, `?via=yt`, `?via=tt`, `?via=wa`, `?via=email`, `?via=qr` |
 | `thank-you.html`, `404.html` | Utility pages (noindex). `404.html` uses `<base href="/">` so it renders at any depth |
 | `test-chat.html` | Hidden copy of the homepage for testing Aurion Assistant: noindex, nofollow, not in the sitemap or any menu, linked from nowhere. It always loads the new chat widget and never the Botpress one |
 

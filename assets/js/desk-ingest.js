@@ -28,9 +28,16 @@
     try {
       var consentBox = form.querySelector('input[name="consent"]');
       var honeypot = form.querySelector('input[name="_gotcha"]');
+      // Keep only the bio-page source ("from" and "via"), never any other query value.
+      var query = new URLSearchParams(window.location.search);
+      var source = new URLSearchParams();
+      ["from", "via"].forEach(function (k) {
+        var v = query.get(k);
+        if (v && /^[A-Za-z0-9_-]{1,30}$/.test(v)) source.set(k, v);
+      });
       var payload = {
         form_id: formId,
-        page_url: window.location.origin + window.location.pathname,
+        page_url: window.location.origin + window.location.pathname + (source.toString() ? "?" + source.toString() : ""),
         name: text(fields.name, 120),
         email: text(fields.email, 200),
         phone: text(fields.phone, 40),
