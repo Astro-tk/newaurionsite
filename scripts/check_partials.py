@@ -23,7 +23,8 @@ REFERENCE = "index.html"
 
 
 def is_stub(data: bytes) -> bool:
-    return b'http-equiv="refresh"' in data
+    # Redirect stubs, and standalone pages (links.html) that deliberately have no shared header/footer.
+    return b'http-equiv="refresh"' in data or b"data-standalone-page" in data
 
 
 def main() -> int:
