@@ -192,7 +192,8 @@
       border: 2px solid var(--lime);
       box-shadow: 4px 4px 0 0 #0f1618;
     }
-    .meter { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-family: var(--pixel); font-size: 8px; letter-spacing: 1px; color: var(--ink-3); }
+    .meter { display: none; }
+    .stepped .meter { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-family: var(--pixel); font-size: 8px; letter-spacing: 1px; color: var(--ink-3); }
     .meter i { width: 14px; height: 6px; display: block; border: 1px solid var(--lime); }
     .meter i.on { background: var(--lime); }
     .field { margin-bottom: 12px; }
@@ -231,8 +232,8 @@
     .done p { margin: 0 0 10px; font-size: 14px; color: var(--ink-2); }
     .done a { color: var(--lime); }
     /* With JavaScript, later fields wait until the earlier ones are filled in. */
-    .stepped .step.waiting { display: none; }
-    .stepped .step.reveal { animation: reveal 220ms steps(4); }
+    .stepped .waiting { display: none; }
+    .stepped .reveal { animation: reveal 220ms steps(4); }
     @keyframes reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 
     @keyframes blink { 50% { opacity: 0; } }
@@ -243,7 +244,7 @@
       .ticker p { animation: none; white-space: normal; padding: 8px 10px; }
       .ticker p span:nth-child(n + 2) { display: none; }
       .btn, .key, .send { transition: none; }
-      .stepped .step.reveal { animation: none; }
+      .stepped .reveal { animation: none; }
     }
     @media (max-width: 360px) {
       h1 { font-size: 16px; }
@@ -297,7 +298,7 @@
                 <form id="auditForm" action="https://formspree.io/f/xjgqqjdo" method="POST">
                   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                   <input type="hidden" name="_subject" value="New enquiry from aurioncreative.com links page">
-                  <p class="meter" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><span>1/4</span></p>
+                  <p class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><span>0/4</span></p>
 
                   <div class="step field" data-step="1">
                     <label for="auditName">Your name</label>
@@ -334,6 +335,8 @@
                       <input type="checkbox" id="auditConsent" name="consent" value="yes">
                       <span>Aurion may contact me about this enquiry.</span>
                     </label>
+                  </div>
+                  <div class="finish">
                     <button class="send" type="submit">SEND</button>
                     <p class="note">We reply within 24 hours, by the next working evening.</p>
                   </div>
@@ -453,9 +456,11 @@
       var errorBox = document.getElementById("auditError");
       var sendBtn = form.querySelector(".send");
       var steps = form.querySelectorAll(".step");
+      var finish = form.querySelector(".finish");
       var meter = form.querySelectorAll(".meter i");
       var meterText = form.querySelector(".meter span");
-      var shown = 1;
+      var shown = 1;       // steps on screen
+      var movedOn = false; // the visitor has finished the message and moved to the last step
 
       // Opening the panel counts as a click on "audit" in Desk (closing does not).
       audit.addEventListener("toggle", function () {
@@ -464,34 +469,57 @@
         if (shown === 1) setTimeout(function () { form.elements["name"].focus(); }, 60);
       });
 
-      // Fields appear one step at a time as the visitor fills them in.
+      // Fields appear one step at a time as the visitor fills them in. SEND waits
+      // below the last step until everything needed is filled in and the visitor
+      // has moved past the message, so it never shows up while they are typing.
       form.classList.add("stepped");
       function ready(step) {
         if (step === 1) return form.elements["name"].value.trim().length >= 2;
         if (step === 2) return form.elements["email"].value.trim() !== "" && form.elements["email"].checkValidity();
         if (step === 3) return form.elements["message"].value.trim().length >= 3;
-        return true;
+        return movedOn;
+      }
+      function reveal(el) {
+        el.classList.remove("waiting");
+        el.classList.add("reveal");
       }
       function update() {
-        while (shown < steps.length && ready(shown)) {
-          var next = steps[shown];
-          next.classList.remove("waiting");
-          next.classList.add("reveal");
-          shown++;
-        }
-        for (var m = 0; m < meter.length; m++) meter[m].classList.toggle("on", m < shown);
-        if (meterText) meterText.textContent = shown + "/" + steps.length;
+        while (shown < steps.length && ready(shown)) reveal(steps[shown++]);
+        var complete = 0;
+        while (complete < steps.length && ready(complete + 1)) complete++;
+        if (complete === steps.length && finish.classList.contains("waiting")) reveal(finish);
+        for (var m = 0; m < meter.length; m++) meter[m].classList.toggle("on", m < complete);
+        if (meterText) meterText.textContent = complete + "/" + steps.length;
       }
       for (var s = 1; s < steps.length; s++) steps[s].classList.add("waiting");
+      finish.classList.add("waiting");
       form.addEventListener("input", update);
       form.addEventListener("change", update);
+      // Moving on: leaving a finished message, or touching the phone or consent box.
+      form.addEventListener("focusout", function (e) {
+        if (e.target === form.elements["message"] && ready(3)) { movedOn = true; update(); }
+      });
+      steps[steps.length - 1].addEventListener("input", function () { movedOn = true; update(); });
+      steps[steps.length - 1].addEventListener("change", function () { movedOn = true; update(); });
+      // Enter (or Go / Next on a phone keyboard) moves to the next field until SEND is showing.
+      form.addEventListener("keydown", function (e) {
+        if (e.key !== "Enter" || e.target.tagName !== "INPUT" || !finish.classList.contains("waiting")) return;
+        e.preventDefault();
+        var fields = [].filter.call(form.querySelectorAll(".input, .check input"), function (el) {
+          return !el.closest(".waiting");
+        });
+        var next = fields[fields.indexOf(e.target) + 1];
+        if (next) next.focus();
+      });
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (form.elements["_gotcha"].value) return; // bots: drop silently, as on the contact page
         // Anything still hidden is shown before the browser points at a missing field.
         for (var k = 0; k < steps.length; k++) steps[k].classList.remove("waiting");
+        finish.classList.remove("waiting");
         shown = steps.length;
+        movedOn = true;
         update();
         if (!form.checkValidity()) { form.reportValidity(); return; }
 
